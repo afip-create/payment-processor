@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print a message
+        run: echo "Hello, world!"
+
+      - name: Print the branch name
+        run: echo "You are on branch: $GITHUB_BRANCH"
+
+      - name: Run a simple build
+        run: |
+          echo "Building..."
+          echo "Build successful!"
